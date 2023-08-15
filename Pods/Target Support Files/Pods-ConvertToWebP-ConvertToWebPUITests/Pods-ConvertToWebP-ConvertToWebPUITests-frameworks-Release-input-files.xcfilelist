@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-ConvertToWebP-ConvertToWebPUITests/Pods-ConvertToWebP-ConvertToWebPUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/SDWebImageWebPCoder/SDWebImageWebPCoder.framework
+${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework
