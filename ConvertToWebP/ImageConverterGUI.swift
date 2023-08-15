@@ -22,6 +22,7 @@ struct ImageConverterGUI: View {
     @State private var rename: Bool = false
     @State private var convert: Bool = false
     @State private var progress: Double = 0.0
+    @State private var resize: Bool = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -63,29 +64,52 @@ struct ImageConverterGUI: View {
                     }
                 }
             }
-            
-            Toggle(isOn: $compress) {
-                Text("Compress")
+            HStack{
+                Toggle(isOn: $compress) {
+                    Text("Compress")
+                }
+                Toggle(isOn: $rename) {
+                    Text("Rename")
+                }
+                
+                Toggle(isOn: $convert) {
+                    Text("Convert")
+                }
+                Toggle(isOn: $resize){
+                    Text("Resize")
+                }
             }
             
             HStack {
                 Text("Quality:")
                 Slider(value: $quality, in: 0...100)
-                Text("\(Int(quality))%")
-            }
-            
-            Toggle(isOn: $rename) {
-                Text("Rename")
-            }
-            
-            Toggle(isOn: $convert) {
-                Text("Convert")
+                    .disabled(!compress)
+                TextField("", value: $quality, formatter: NumberFormatter(), onCommit: {
+                                if self.quality > 100 {
+                                    self.quality = 100
+                                }
+                            })
+                                .frame(width: 50)
+                                .multilineTextAlignment(.center)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .disabled(!compress)
+                Text("%")
             }
             
             HStack {
                 Text("Resize Width (%):")
                 Slider(value: $newWidthPercentage, in: 1...100)
-                Text("\(Int(newWidthPercentage))%")
+                    .disabled(!resize)
+                TextField("", value: $newWidthPercentage, formatter: NumberFormatter(), onCommit: {
+                                if self.newWidthPercentage > 100 {
+                                    self.newWidthPercentage = 100
+                                }
+                            })
+                                .frame(width: 50)
+                                .multilineTextAlignment(.center)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .disabled(!resize)
+                Text("%")
             }
             
             Button("Run") {
@@ -112,20 +136,55 @@ struct ImageConverterGUI: View {
                 }
 
                 // Resize the image
-                let scaleFactor = CGFloat(self.newWidthPercentage / 100.0)
-                let newSize = CGSize(width: inputImage.size.width * scaleFactor, height: inputImage.size.height * scaleFactor)
-                
-                inputImage.size = newSize
-                guard let imageRep = NSBitmapImageRep(data: inputImage.tiffRepresentation!),
-                      let resizedData = imageRep.representation(using: .jpeg, properties: [:]) else {
+                var outputImage: NSImage? = inputImage
+                if self.resize {
+                    let scaleFactor = CGFloat(self.newWidthPercentage / 100.0)
+                    let newSize = CGSize(width: inputImage.size.width * scaleFactor, height: inputImage.size.height * scaleFactor)
+                    
+                    let newRep = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(newSize.width), pixelsHigh: Int(newSize.height), bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: NSColorSpaceName.deviceRGB, bytesPerRow: 0, bitsPerPixel: 0)!
+                    
+                    NSGraphicsContext.saveGraphicsState()
+                    NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: newRep)
+                    inputImage.draw(in: NSRect(x: 0, y: 0, width: newSize.width, height: newSize.height), from: NSZeroRect, operation: .copy, fraction: 1.0)
+                    NSGraphicsContext.restoreGraphicsState()
+                    
+                    outputImage = NSImage(size: newSize)
+                    outputImage?.addRepresentation(newRep)
+                }
+
+                guard let imageData = outputImage?.tiffRepresentation,
+                         let imageRep = NSBitmapImageRep(data: imageData),
+                         let resizedData = imageRep.representation(using: .jpeg, properties: [:]) else {
                     print("Failed to resize the image: \(file)")
                     continue
                 }
-                
+
                 let resizedImage = NSImage(data: resizedData)
 
-                // Save as WebP
-                let webPData = resizedImage?.sd_imageData(as: .webP, compressionQuality: CGFloat(self.quality / 100.0))
+                // Determine compression quality
+                let compressionQuality: CGFloat = compress ? CGFloat(self.quality / 100.0) : 1.0
+                let fileExtension = URL(fileURLWithPath: file).pathExtension.lowercased()
+
+                var finalImageData: Data?
+                if convert {
+                    // Convert to WebP with the specified compression quality
+                    finalImageData = resizedImage?.sd_imageData(as: .webP, compressionQuality: compressionQuality)
+                } else {
+                    switch fileExtension {
+                    case "jpeg", "jpg":
+                        // Convert to JPEG with the specified compression quality
+                        finalImageData = resizedImage?.sd_imageData(as: .JPEG, compressionQuality: compressionQuality)
+                    case "png":
+                        // Convert to PNG
+                        finalImageData = resizedImage?.sd_imageData(as: .PNG)
+                    case "webp":
+                        // Handle WebP
+                        finalImageData = resizedImage?.sd_imageData(as: .webP, compressionQuality: compressionQuality)
+                    default:
+                        print("Unsupported format: \(fileExtension). Skipping...")
+                        continue
+                    }
+                }
 
                 // Determine the destination path
                 let relativePath = file.replacingOccurrences(of: self.folderPath, with: "")
@@ -135,10 +194,13 @@ struct ImageConverterGUI: View {
                     let folderPath = URL(fileURLWithPath: relativePath).deletingLastPathComponent().path
                     let filename = URL(fileURLWithPath: relativePath).deletingPathExtension().lastPathComponent
                     let renamedFilename = self.renameFile(filename)
-                    print(renamedFilename)
-                    finalRelativePath = folderPath + "/" + renamedFilename + "a.webp"
+                    finalRelativePath = folderPath + "/" + renamedFilename
                 }
-
+                if convert {
+                    finalRelativePath += ".webp"
+                } else {
+                    finalRelativePath += ".\(fileExtension)"
+                }
                 let destinationURL = URL(fileURLWithPath: self.destinationFolderPath).appendingPathComponent(finalRelativePath)
 
                 // Ensure the directory exists
@@ -146,7 +208,7 @@ struct ImageConverterGUI: View {
                 try? FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true, attributes: nil)
 
                 // Write to file
-                try? webPData?.write(to: destinationURL)
+                try? finalImageData?.write(to: destinationURL)
 
                 processedImages += 1
                 let progressValue = Double(processedImages) / Double(totalImages) * 100.0
@@ -158,6 +220,7 @@ struct ImageConverterGUI: View {
             }
         }
     }
+
 
     func renameFile(_ filename: String) -> String {
         var newName = filename
@@ -192,7 +255,7 @@ struct ImageConverterGUI: View {
         guard let enumerator = FileManager.default.enumerator(atPath: directory) else { return [] }
         
         var imageFiles: [String] = []
-        let imageExtensions: Set<String> = ["jpg", "jpeg", "png"]
+        let imageExtensions: Set<String> = ["jpg", "jpeg", "png", "webp"]
         
         for case let file as String in enumerator {
             let fileExtension = URL(fileURLWithPath: file).pathExtension.lowercased()

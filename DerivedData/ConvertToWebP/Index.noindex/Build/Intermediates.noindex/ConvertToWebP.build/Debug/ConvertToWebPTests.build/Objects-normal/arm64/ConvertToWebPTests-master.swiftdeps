@@ -1,0 +1,6 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "7810de6e923e18d3ce4394676e1628fa8a88d0b383719fd85e05eab92b1f3861"
+build_start_time: [1692088789, 258504000]
+build_end_time: [1692088794, 288336000]
+inputs:
+  "/Users/mrzeapple/Desktop/ConvertToWebP/ConvertToWebP/ConvertToWebPTests/ConvertToWebPTests.swift": [1692076395, 319025726]

@@ -1,36 +1,59 @@
 //
-//  ConvertToWebPTests.swift
-//  ConvertToWebPTests
+//  ConvertToWebPApp.swift
+//  ConvertToWebP
 //
 //  Created by Matthew Stevens on 8/15/23.
 //
 
-import XCTest
-@testable import ConvertToWebP
+import SwiftUI
+import Combine
 
-final class ConvertToWebPTests: XCTestCase {
+struct ContentView: View {
+    @State private var showImageConverter = true
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var body: some View {
+        VStack {
+            HStack {
+                Button("Converter") {
+                    withAnimation {
+                        self.showImageConverter = true
+                    }
+                }
+                .disabled(showImageConverter)
+                
+                Button("File Renamer") {
+                    withAnimation {
+                        self.showImageConverter = false
+                    }
+                }
+                .disabled(!showImageConverter)
+            }
+            .padding()
+            
+            if showImageConverter {
+                ImageConverterGUI()
+            } else {
+                FileRenamerGUI()
+            }
+        }
+        .frame(width: 800, height: 350)
     }
+}
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+struct FileRenamerGUI: View {
+    var body: some View {
+        // Your File Renamer GUI code here
+        Text("File Renamer GUI")
     }
+}
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
+@main
+struct MainApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
         }
     }
-
 }

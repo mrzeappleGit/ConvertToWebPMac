@@ -1,0 +1,15 @@
+Target dependency graph (5 targets)
+SDWebImage in Pods, no dependencies
+libwebp in Pods, no dependencies
+SDWebImageWebPCoder in Pods, depends on:
+SDWebImage in Pods (explicit)
+libwebp in Pods (explicit)
+Pods-ConvertToWebP in Pods, depends on:
+SDWebImage in Pods (explicit)
+SDWebImageWebPCoder in Pods (explicit)
+libwebp in Pods (explicit)
+ConvertToWebP in ConvertToWebP, depends on:
+SDWebImageWebPCoder in Pods (implicit dependency via file 'SDWebImageWebPCoder.framework' in build phase 'Link Binary')
+SDWebImage in Pods (implicit dependency via file 'SDWebImage.framework' in build phase 'Link Binary')
+libwebp in Pods (implicit dependency via file 'libwebp.framework' in build phase 'Link Binary')
+Pods-ConvertToWebP in Pods (implicit dependency via file 'Pods_ConvertToWebP.framework' in build phase 'Link Binary')

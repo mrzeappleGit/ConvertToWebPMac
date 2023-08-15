@@ -31,21 +31,15 @@ struct ContentView: View {
             .padding()
             
             if showImageConverter {
-                ImageConverterGUI()
+                ImageConverterGUI()  // Assuming you have a SwiftUI View named ImageConverterGUI
             } else {
-                FileRenamerGUI()
+                FileRenamerView()  // Using the correct name here
             }
         }
         .frame(width: 800, height: 350)
     }
 }
 
-struct FileRenamerGUI: View {
-    var body: some View {
-        // Your File Renamer GUI code here
-        Text("File Renamer GUI")
-    }
-}
 
 @main
 struct MainApp: App {
