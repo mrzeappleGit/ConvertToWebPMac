@@ -40,7 +40,6 @@ struct ContentView: View {
     }
 }
 
-
 @main
 struct MainApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate

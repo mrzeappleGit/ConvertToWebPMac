@@ -122,10 +122,23 @@ struct ImageConverterGUI: View {
     }
     
     func convertImages() {
-        // Fetch all image files from the source directory recursively
-        let imageFiles = fetchImageFiles(from: folderPath)
+        // Check if the folderPath is a directory or a file
+        var imageFiles: [String] = []
+        var isDirectory: ObjCBool = false
+        if FileManager.default.fileExists(atPath: folderPath, isDirectory: &isDirectory) {
+            if isDirectory.boolValue {
+                // Fetch all image files from the source directory recursively
+                imageFiles = fetchImageFiles(from: folderPath)
+            } else {
+                // Process only the single file selected
+                imageFiles = [folderPath]
+            }
+        }
+        
         let totalImages = imageFiles.count
         var processedImages = 0
+
+        let isSingleFile = !isDirectory.boolValue
 
         DispatchQueue.global(qos: .userInitiated).async {
             for file in imageFiles {
@@ -187,20 +200,30 @@ struct ImageConverterGUI: View {
                 }
 
                 // Determine the destination path
-                let relativePath = file.replacingOccurrences(of: self.folderPath, with: "")
-                var finalRelativePath = relativePath
-
-                if self.rename {
-                    let folderPath = URL(fileURLWithPath: relativePath).deletingLastPathComponent().path
-                    let filename = URL(fileURLWithPath: relativePath).deletingPathExtension().lastPathComponent
-                    let renamedFilename = self.renameFile(filename)
-                    finalRelativePath = folderPath + "/" + renamedFilename
-                }
-                if convert {
-                    finalRelativePath += ".webp"
+                var finalRelativePath: String
+                if isSingleFile {
+                    let filename = URL(fileURLWithPath: file).lastPathComponent
+                    finalRelativePath = filename
+                    if self.rename {
+                        let renamedFilename = self.renameFile(URL(fileURLWithPath: finalRelativePath).deletingPathExtension().lastPathComponent)
+                        let fileExtension = convert ? "webp" : URL(fileURLWithPath: finalRelativePath).pathExtension
+                        finalRelativePath = "\(renamedFilename).\(fileExtension)"
+                    } else if convert {
+                        finalRelativePath = URL(fileURLWithPath: finalRelativePath).deletingPathExtension().appendingPathExtension("webp").lastPathComponent
+                    }
                 } else {
-                    finalRelativePath += ".\(fileExtension)"
+                    let relativePath = file.replacingOccurrences(of: self.folderPath, with: "")
+                    finalRelativePath = relativePath
+                    if self.rename {
+                        let renamedFilename = self.renameFile(URL(fileURLWithPath: relativePath).deletingPathExtension().lastPathComponent)
+                        let fileExtension = convert ? "webp" : URL(fileURLWithPath: relativePath).pathExtension
+                        let folderStructure = URL(fileURLWithPath: relativePath).deletingLastPathComponent().path
+                        finalRelativePath = folderStructure + "/" + "\(renamedFilename).\(fileExtension)"
+                    } else if convert {
+                        finalRelativePath = URL(fileURLWithPath: relativePath).deletingPathExtension().appendingPathExtension("webp").path
+                    }
                 }
+
                 let destinationURL = URL(fileURLWithPath: self.destinationFolderPath).appendingPathComponent(finalRelativePath)
 
                 // Ensure the directory exists

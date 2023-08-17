@@ -13,6 +13,8 @@
 		C9ADB70F2A8C0B7B0080F0ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ADB70B2A8C0B7B0080F0ED /* ContentView.swift */; };
 		C9ADB7102A8C0B7B0080F0ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ADB70C2A8C0B7B0080F0ED /* AppDelegate.swift */; };
 		C9ADB7122A8C16AD0080F0ED /* FileRenamerGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ADB7112A8C16AD0080F0ED /* FileRenamerGUI.swift */; };
+		C9ADB7152A8E921F0080F0ED /* UpdateWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ADB7132A8E921F0080F0ED /* UpdateWindowController.swift */; };
+		C9ADB7162A8E921F0080F0ED /* UpdateWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9ADB7142A8E921F0080F0ED /* UpdateWindowController.xib */; };
 		C9F932B62A8B40EA004550D8 /* ConvertToWebPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F932B52A8B40EA004550D8 /* ConvertToWebPApp.swift */; };
 		C9F932B82A8B40EA004550D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F932B72A8B40EA004550D8 /* ContentView.swift */; };
 		C9F932BA2A8B40EB004550D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9F932B92A8B40EB004550D8 /* Assets.xcassets */; };
@@ -61,6 +63,8 @@
 		C9ADB70B2A8C0B7B0080F0ED /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C9ADB70C2A8C0B7B0080F0ED /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9ADB7112A8C16AD0080F0ED /* FileRenamerGUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileRenamerGUI.swift; sourceTree = "<group>"; };
+		C9ADB7132A8E921F0080F0ED /* UpdateWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateWindowController.swift; sourceTree = "<group>"; };
+		C9ADB7142A8E921F0080F0ED /* UpdateWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateWindowController.xib; sourceTree = "<group>"; };
 		C9F932B22A8B40EA004550D8 /* ConvertToWebP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConvertToWebP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9F932B52A8B40EA004550D8 /* ConvertToWebPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertToWebPApp.swift; sourceTree = "<group>"; };
 		C9F932B72A8B40EA004550D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 				C9F932E22A8B41C7004550D8 /* ImageConverterGUI.swift */,
 				C9F932E62A8B4DA6004550D8 /* AppDelegate.swift */,
 				C9ADB7112A8C16AD0080F0ED /* FileRenamerGUI.swift */,
+				C9ADB7132A8E921F0080F0ED /* UpdateWindowController.swift */,
+				C9ADB7142A8E921F0080F0ED /* UpdateWindowController.xib */,
 			);
 			path = ConvertToWebP;
 			sourceTree = "<group>";
@@ -316,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9ADB7162A8E921F0080F0ED /* UpdateWindowController.xib in Resources */,
 				C9F932BD2A8B40EB004550D8 /* Preview Assets.xcassets in Resources */,
 				C9F932BA2A8B40EB004550D8 /* Assets.xcassets in Resources */,
 			);
@@ -467,6 +474,7 @@
 				C9F932B82A8B40EA004550D8 /* ContentView.swift in Sources */,
 				C9F932B62A8B40EA004550D8 /* ConvertToWebPApp.swift in Sources */,
 				C9F932E32A8B41C7004550D8 /* ImageConverterGUI.swift in Sources */,
+				C9ADB7152A8E921F0080F0ED /* UpdateWindowController.swift in Sources */,
 				C9ADB7122A8C16AD0080F0ED /* FileRenamerGUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -644,13 +652,13 @@
 				INFOPLIST_FILE = ConvertToWebP/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Convert To WebP";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "©2023 Matthew Thomas Stevens Studios LLC";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mts-studios.ConvertToWebP";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -679,13 +687,13 @@
 				INFOPLIST_FILE = ConvertToWebP/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Convert To WebP";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "©2023 Matthew Thomas Stevens Studios LLC";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mts-studios.ConvertToWebP";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
