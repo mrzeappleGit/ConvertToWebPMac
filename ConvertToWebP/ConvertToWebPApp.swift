@@ -9,31 +9,55 @@ import SwiftUI
 import Combine
 
 struct ContentView: View {
-    @State private var showImageConverter = true
+    enum ActiveView {
+        case converter, fileRenamer, pdfToImage, videoConverter
+    }
+
+    @State private var activeView: ActiveView = .converter
 
     var body: some View {
         VStack {
             HStack {
                 Button("Converter") {
                     withAnimation {
-                        self.showImageConverter = true
+                        self.activeView = .converter
                     }
                 }
-                .disabled(showImageConverter)
-                
+                .disabled(activeView == .converter)
+
                 Button("File Renamer") {
                     withAnimation {
-                        self.showImageConverter = false
+                        self.activeView = .fileRenamer
                     }
                 }
-                .disabled(!showImageConverter)
+                .disabled(activeView == .fileRenamer)
+                
+                Button("PDF to Image") {
+                    withAnimation {
+                        self.activeView = .pdfToImage
+                    }
+                }
+                .disabled(activeView == .pdfToImage)
+                
+                Button("Video Converter") {
+                    withAnimation {
+                        self.activeView = .videoConverter
+                    }
+                }
+                .disabled(activeView == .videoConverter)
+                
             }
             .padding()
             
-            if showImageConverter {
-                ImageConverterGUI()  // Assuming you have a SwiftUI View named ImageConverterGUI
-            } else {
-                FileRenamerView()  // Using the correct name here
+            switch activeView {
+            case .converter:
+                ImageConverterGUI()  // Assuming you have this SwiftUI view in your project
+            case .fileRenamer:
+                FileRenamerView()  // Placeholder for your file renamer functionality
+            case .pdfToImage:
+                pdfToImageView()  // Using the SwiftUI view for PDF-to-Image conversion
+            case .videoConverter:
+                VideoConverterView()
             }
         }
         .frame(width: 800, height: 350)

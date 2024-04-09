@@ -1,0 +1,9 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "a68a2b73e3c9b46137aacaf0e75b27844f8145222bf344b44faa0c394250fbfd"
+build_start_time: [1692088748, 72130000]
+build_end_time: [1692088748, 104573000]
+inputs:
+  "/Users/mrzeapple/Desktop/ConvertToWebP/ConvertToWebP/ConvertToWebP/AppDelegate.swift": !private [1692081759, 601525069]
+  "/Users/mrzeapple/Desktop/ConvertToWebP/ConvertToWebP/ConvertToWebP/ContentView.swift": !private [1692084494, 759337579]
+  "/Users/mrzeapple/Desktop/ConvertToWebP/ConvertToWebP/ConvertToWebP/ConvertToWebPApp.swift": !private [1692084577, 50385647]
+  "/Users/mrzeapple/Desktop/ConvertToWebP/ConvertToWebP/ConvertToWebP/ImageConverterGUI.swift": !private [1692084494, 768421763]

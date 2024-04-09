@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		C0F922E1522680676C872788 /* Pods_ConvertToWebP_ConvertToWebPUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274B48F859F00283A66ED1AD /* Pods_ConvertToWebP_ConvertToWebPUITests.framework */; };
+		C91FCEA12AD8CCC300464439 /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = C91FCEA02AD8CCC300464439 /* ffmpeg */; };
+		C91FCEA32AD8D3D500464439 /* ffprobe in Resources */ = {isa = PBXBuildFile; fileRef = C91FCEA22AD8D3D500464439 /* ffprobe */; };
+		C9295E4D2AD8C3D4004A2413 /* videoConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9295E4C2AD8C3D4004A2413 /* videoConverter.swift */; };
+		C9A8FF192BC4B24200099B7F /* Pods_ConvertToWebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A02C750CB32C5CF5F7BC20 /* Pods_ConvertToWebP.framework */; };
 		C9ADB70D2A8C0B7B0080F0ED /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9ADB7092A8C0B7B0080F0ED /* Info.plist */; };
 		C9ADB70E2A8C0B7B0080F0ED /* ImageConverterGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ADB70A2A8C0B7B0080F0ED /* ImageConverterGUI.swift */; };
 		C9ADB70F2A8C0B7B0080F0ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ADB70B2A8C0B7B0080F0ED /* ContentView.swift */; };
@@ -15,6 +19,7 @@
 		C9ADB7122A8C16AD0080F0ED /* FileRenamerGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ADB7112A8C16AD0080F0ED /* FileRenamerGUI.swift */; };
 		C9ADB7152A8E921F0080F0ED /* UpdateWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ADB7132A8E921F0080F0ED /* UpdateWindowController.swift */; };
 		C9ADB7162A8E921F0080F0ED /* UpdateWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9ADB7142A8E921F0080F0ED /* UpdateWindowController.xib */; };
+		C9ADB71A2A940F780080F0ED /* pdfToImageGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ADB7192A940F780080F0ED /* pdfToImageGUI.swift */; };
 		C9F932B62A8B40EA004550D8 /* ConvertToWebPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F932B52A8B40EA004550D8 /* ConvertToWebPApp.swift */; };
 		C9F932B82A8B40EA004550D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F932B72A8B40EA004550D8 /* ContentView.swift */; };
 		C9F932BA2A8B40EB004550D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9F932B92A8B40EB004550D8 /* Assets.xcassets */; };
@@ -28,7 +33,6 @@
 		C9F932FC2A8B6ED9004550D8 /* SDWebImageWebPCoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F932F12A8B6C87004550D8 /* SDWebImageWebPCoder.framework */; };
 		C9F933042A8B6FF7004550D8 /* libwebp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F932F32A8B6D41004550D8 /* libwebp.framework */; };
 		DFE7ED4E6A16B40BA8730BFC /* Pods_ConvertToWebPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B2B8E218484CD3E98BE675 /* Pods_ConvertToWebPTests.framework */; };
-		EC88DFAF5AAD12D65D2AAC2B /* Pods_ConvertToWebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A02C750CB32C5CF5F7BC20 /* Pods_ConvertToWebP.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,9 @@
 		5C7021F3F5EF84AE91BD32FA /* Pods-ConvertToWebPTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConvertToWebPTests.release.xcconfig"; path = "Target Support Files/Pods-ConvertToWebPTests/Pods-ConvertToWebPTests.release.xcconfig"; sourceTree = "<group>"; };
 		8C5A9BA2BC2003AA874AED88 /* Pods-ConvertToWebP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConvertToWebP.debug.xcconfig"; path = "Target Support Files/Pods-ConvertToWebP/Pods-ConvertToWebP.debug.xcconfig"; sourceTree = "<group>"; };
 		A8E78620C2971F7563D8BC6C /* Pods-ConvertToWebP-ConvertToWebPUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConvertToWebP-ConvertToWebPUITests.debug.xcconfig"; path = "Target Support Files/Pods-ConvertToWebP-ConvertToWebPUITests/Pods-ConvertToWebP-ConvertToWebPUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C91FCEA02AD8CCC300464439 /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
+		C91FCEA22AD8D3D500464439 /* ffprobe */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffprobe; sourceTree = "<group>"; };
+		C9295E4C2AD8C3D4004A2413 /* videoConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoConverter.swift; sourceTree = "<group>"; };
 		C9ADB7092A8C0B7B0080F0ED /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9ADB70A2A8C0B7B0080F0ED /* ImageConverterGUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageConverterGUI.swift; sourceTree = "<group>"; };
 		C9ADB70B2A8C0B7B0080F0ED /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,6 +72,7 @@
 		C9ADB7112A8C16AD0080F0ED /* FileRenamerGUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileRenamerGUI.swift; sourceTree = "<group>"; };
 		C9ADB7132A8E921F0080F0ED /* UpdateWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateWindowController.swift; sourceTree = "<group>"; };
 		C9ADB7142A8E921F0080F0ED /* UpdateWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateWindowController.xib; sourceTree = "<group>"; };
+		C9ADB7192A940F780080F0ED /* pdfToImageGUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pdfToImageGUI.swift; sourceTree = "<group>"; };
 		C9F932B22A8B40EA004550D8 /* ConvertToWebP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConvertToWebP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9F932B52A8B40EA004550D8 /* ConvertToWebPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertToWebPApp.swift; sourceTree = "<group>"; };
 		C9F932B72A8B40EA004550D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,7 +101,7 @@
 				C9F932FC2A8B6ED9004550D8 /* SDWebImageWebPCoder.framework in Frameworks */,
 				C9F932FA2A8B6ED7004550D8 /* SDWebImage.framework in Frameworks */,
 				C9F933042A8B6FF7004550D8 /* libwebp.framework in Frameworks */,
-				EC88DFAF5AAD12D65D2AAC2B /* Pods_ConvertToWebP.framework in Frameworks */,
+				C9A8FF192BC4B24200099B7F /* Pods_ConvertToWebP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +176,8 @@
 		C9F932B42A8B40EA004550D8 /* ConvertToWebP */ = {
 			isa = PBXGroup;
 			children = (
+				C91FCEA22AD8D3D500464439 /* ffprobe */,
+				C91FCEA02AD8CCC300464439 /* ffmpeg */,
 				C9F932EB2A8B5143004550D8 /* Info.plist */,
 				C9F932B52A8B40EA004550D8 /* ConvertToWebPApp.swift */,
 				C9F932B72A8B40EA004550D8 /* ContentView.swift */,
@@ -179,6 +189,8 @@
 				C9ADB7112A8C16AD0080F0ED /* FileRenamerGUI.swift */,
 				C9ADB7132A8E921F0080F0ED /* UpdateWindowController.swift */,
 				C9ADB7142A8E921F0080F0ED /* UpdateWindowController.xib */,
+				C9ADB7192A940F780080F0ED /* pdfToImageGUI.swift */,
+				C9295E4C2AD8C3D4004A2413 /* videoConverter.swift */,
 			);
 			path = ConvertToWebP;
 			sourceTree = "<group>";
@@ -224,6 +236,7 @@
 				C9F932AF2A8B40EA004550D8 /* Frameworks */,
 				C9F932B02A8B40EA004550D8 /* Resources */,
 				CBF6FA8F0E1EDCC50368F069 /* [CP] Embed Pods Frameworks */,
+				C91FCEA42AD8D6FE00464439 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -325,6 +338,8 @@
 				C9ADB7162A8E921F0080F0ED /* UpdateWindowController.xib in Resources */,
 				C9F932BD2A8B40EB004550D8 /* Preview Assets.xcassets in Resources */,
 				C9F932BA2A8B40EB004550D8 /* Assets.xcassets in Resources */,
+				C91FCEA32AD8D3D500464439 /* ffprobe in Resources */,
+				C91FCEA12AD8CCC300464439 /* ffmpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +461,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ConvertToWebPTests/Pods-ConvertToWebPTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C91FCEA42AD8D6FE00464439 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncodesign --force --options=runtime \\\n--sign \"${EXPANDED_CODE_SIGN_IDENTITY_NAME}\" \\\n\"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Contents/Resources/ffmpeg\"\ncodesign --force --options=runtime \\\n--sign \"${EXPANDED_CODE_SIGN_IDENTITY_NAME}\" \\\n\"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Contents/Resources/ffprobe\"\n";
+		};
 		CBF6FA8F0E1EDCC50368F069 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -470,11 +502,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9ADB71A2A940F780080F0ED /* pdfToImageGUI.swift in Sources */,
 				C9F932E72A8B4DA6004550D8 /* AppDelegate.swift in Sources */,
 				C9F932B82A8B40EA004550D8 /* ContentView.swift in Sources */,
 				C9F932B62A8B40EA004550D8 /* ConvertToWebPApp.swift in Sources */,
 				C9F932E32A8B41C7004550D8 /* ImageConverterGUI.swift in Sources */,
 				C9ADB7152A8E921F0080F0ED /* UpdateWindowController.swift in Sources */,
+				C9295E4D2AD8C3D4004A2413 /* videoConverter.swift in Sources */,
 				C9ADB7122A8C16AD0080F0ED /* FileRenamerGUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,6 +553,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -550,8 +585,13 @@
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -580,6 +620,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -611,8 +652,13 @@
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -638,29 +684,34 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ConvertToWebP/ConvertToWebP.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ConvertToWebP/Preview Content\"";
 				DEVELOPMENT_TEAM = TQ7X3YHASX;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ConvertToWebP/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Convert To WebP";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "©2023 Matthew Thomas Stevens Studios LLC";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "©2024 Matthew Thomas Stevens Studios LLC";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.3.1;
+				MERGED_BINARY_TYPE = automatic;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mts-studios.ConvertToWebP";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -673,29 +724,34 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ConvertToWebP/ConvertToWebP.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ConvertToWebP/Preview Content\"";
 				DEVELOPMENT_TEAM = TQ7X3YHASX;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ConvertToWebP/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Convert To WebP";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "©2023 Matthew Thomas Stevens Studios LLC";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "©2024 Matthew Thomas Stevens Studios LLC";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.3.1;
+				MERGED_BINARY_TYPE = automatic;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mts-studios.ConvertToWebP";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};

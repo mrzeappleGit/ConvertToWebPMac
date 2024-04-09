@@ -1,0 +1,81 @@
+{
+  "buildCommand" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : false,
+    "targets" : null
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "e44e959979f34757389fb6490f05bc2606d9de64b4970a8e59ad0a80e7df849f"
+    },
+    {
+      "guid" : "e44e959979f34757389fb6490f05bc26d845efff35cd3d874486208eabc4419d"
+    },
+    {
+      "guid" : "e44e959979f34757389fb6490f05bc26262f5a4b99fb4716354f5357669e96e4"
+    },
+    {
+      "guid" : "8699adb1dd336b26511df848a716bd4200f18c561d85cf567eee4c27ee2ef812"
+    },
+    {
+      "guid" : "8699adb1dd336b26511df848a716bd425fd77100456808d43e2c9c7467fcc058"
+    },
+    {
+      "guid" : "8699adb1dd336b26511df848a716bd4249a38232753f542a5ccfc10a619d74d3"
+    },
+    {
+      "guid" : "8699adb1dd336b26511df848a716bd42c46180aea4e87057640961e6db37df0d"
+    },
+    {
+      "guid" : "8699adb1dd336b26511df848a716bd4237027570fe3a09bb9c7d0d2620332306"
+    },
+    {
+      "guid" : "8699adb1dd336b26511df848a716bd42459ecbbef4dbbe8a07a0c87bad0e0d1b"
+    }
+  ],
+  "containerPath" : "/Users/mrzeapple/Desktop/ConvertToWebP/ConvertToWebP/ConvertToWebP.xcworkspace",
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "undefined_arch",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : true,
+      "platform" : "macosx",
+      "sdk" : "macosx13.3",
+      "sdkVariant" : "macos",
+      "supportedArchitectures" : [
+        "arm64",
+        "arm64e",
+        "x86_64",
+        "x86_64h"
+      ],
+      "targetArchitecture" : "undefined_arch"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "",
+      "buildProductsPath" : "",
+      "derivedDataPath" : "/Users/mrzeapple/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/mrzeapple/Library/Developer/Xcode/DerivedData/ConvertToWebP-dekibkplawlsvrdokfjidurbwive/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/mrzeapple/Library/Developer/Xcode/DerivedData/ConvertToWebP-dekibkplawlsvrdokfjidurbwive/Index.noindex/PrecompiledHeaders",
+      "pchPath" : ""
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO"
+        }
+      }
+    }
+  },
+  "qos" : "default",
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : true,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}
