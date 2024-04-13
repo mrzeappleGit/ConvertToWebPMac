@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ConvertToWebP.xcodeproj">
+      location = "group:/Users/mrzeapple/Desktop/ConvertToWebP/ConvertToWebP/ConvertToWebP.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
