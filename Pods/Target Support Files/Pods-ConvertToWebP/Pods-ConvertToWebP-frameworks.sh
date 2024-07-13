@@ -18,7 +18,7 @@ echo "mkdir -p ${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 
 COCOAPODS_PARALLEL_CODE_SIGN="${COCOAPODS_PARALLEL_CODE_SIGN:-false}"
-SWIFT_STDLIB_PATH="${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}"
+SWIFT_STDLIB_PATH="${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}"
 BCSYMBOLMAP_DIR="BCSymbolMaps"
 
 
@@ -27,22 +27,22 @@ BCSYMBOLMAP_DIR="BCSymbolMaps"
 RSYNC_PROTECT_TMP_FILES=(--filter "P .*.??????")
 
 # Copies and strips a vendored framework
-install_framework() {
-    local source=""
-    if [ -r "${BUILT_PRODUCTS_DIR}/$1" ]; then
-        local source="${BUILT_PRODUCTS_DIR}/$1"
-    elif [ -r "${BUILT_PRODUCTS_DIR}/$(basename "$1")" ]; then
-        local source="${BUILT_PRODUCTS_DIR}/$(basename "$1")"
-    elif [ -r "$1" ]; then
-        local source="$1"
-    fi
+install_framework()
+{
+  if [ -r "${BUILT_PRODUCTS_DIR}/$1" ]; then
+    local source="${BUILT_PRODUCTS_DIR}/$1"
+  elif [ -r "${BUILT_PRODUCTS_DIR}/$(basename "$1")" ]; then
+    local source="${BUILT_PRODUCTS_DIR}/$(basename "$1")"
+  elif [ -r "$1" ]; then
+    local source="$1"
+  fi
 
-    local destination="${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
+  local destination="${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 
-    if [ -L "${source}" ]; then
-        echo "Symlinked..."
-        source="$(readlink -f "${source}")"
-    fi
+  if [ -L "${source}" ]; then
+    echo "Symlinked..."
+    source="$(readlink -f "${source}")"
+  fi
 
   if [ -d "${source}/${BCSYMBOLMAP_DIR}" ]; then
     # Locate and install any .bcsymbolmaps if present, and remove them from the .framework before the framework is copied

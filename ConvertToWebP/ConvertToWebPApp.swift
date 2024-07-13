@@ -10,7 +10,7 @@ import Combine
 
 struct ContentView: View {
     enum ActiveView {
-        case converter, fileRenamer, pdfToImage, videoConverter
+        case converter, fileRenamer, pdfToImage, videoConverter, textFormatter
     }
 
     @State private var activeView: ActiveView = .converter
@@ -46,6 +46,13 @@ struct ContentView: View {
                 }
                 .disabled(activeView == .videoConverter)
                 
+                Button("Text Formatter"){
+                    withAnimation {
+                        self.activeView = .textFormatter
+                    }
+                }
+                .disabled(activeView == .textFormatter)
+                
             }
             .padding()
             
@@ -58,6 +65,8 @@ struct ContentView: View {
                 pdfToImageView()  // Using the SwiftUI view for PDF-to-Image conversion
             case .videoConverter:
                 VideoConverterView()
+            case .textFormatter:
+                TextFormatterView()
             }
         }
         .frame(width: 800, height: 350)

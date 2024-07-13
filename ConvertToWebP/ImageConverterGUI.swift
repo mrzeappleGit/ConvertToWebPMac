@@ -10,7 +10,6 @@ import CoreImage
 import CoreImage.CIFilterBuiltins
 import ImageIO
 import UniformTypeIdentifiers
-import SDWebImage
 import SDWebImageWebPCoder
 
 struct ImageConverterGUI: View {
