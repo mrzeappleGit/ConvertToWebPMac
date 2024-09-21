@@ -11,7 +11,7 @@ import SDWebImage
 import SDWebImageWebPCoder
 
 class UpdateManager {
-    static let currentVersion = "1.3.2"  // Replace with your current app version
+    static let currentVersion = "1.4.1"  // Replace with your current app version
     static let SERVER_URL = URL(string: "https://webp.mts-studios.com:5001/current_version")!
     
     static func checkForUpdates(completion: @escaping (Bool, String?) -> Void) {

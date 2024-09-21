@@ -45,6 +45,8 @@ struct pdfToImageView: View {
     @State private var alertMessage: String = ""
     @State private var showSavePanel: Bool = false
     @State private var fileToExport: ImageFile? = nil  // Change PNGFile to ImageFile
+    @State private var includeMargins: Bool = true  // Toggle for including margins
+    @State private var previewImage: NSImage? = nil  // For displaying the preview image
 
     // Computed property for suggested filename
     var suggestedFilename: String {
@@ -54,28 +56,46 @@ struct pdfToImageView: View {
     }
 
     var body: some View {
-        VStack {
-            HStack {
-                Text("PDF File:")
-                TextField("Select a PDF file...", text: $pdfFilePathString)
-                    .disabled(true)
-                    .frame(width: 200)
+        HStack {
+            // Left side - form inputs
+            VStack(alignment: .leading) {
+                HStack {
+                    Text("PDF File:")
+                    TextField("Select a PDF file...", text: $pdfFilePathString)
+                        .disabled(true)
+                        .frame(width: 200)
 
-                Button("Select PDF") {
-                    self.showFilePicker = true
+                    Button("Select PDF") {
+                        self.showFilePicker = true
+                    }
+                }
+
+                Toggle(isOn: $includeMargins) {
+                    Text("Include Margins")
+                }
+                .padding()
+
+                Button("Convert PDF") {
+                    convertPDFToWebP()
                 }
             }
+            .padding()
 
-            Button("Convert PDF") {
-                convertPDFToWebP()
+            // Right side - Preview image
+            if let preview = previewImage {
+                Image(nsImage: preview)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 300, height: 400)
+                    .padding(.leading, 20)
             }
         }
-        .padding()
         .fileImporter(isPresented: $showFilePicker, allowedContentTypes: [.pdf]) { result in
             switch result {
             case .success(let url):
                 self.pdfFilePath = url
                 self.pdfFilePathString = url.absoluteString
+                generatePreview()  // Show preview when file is selected
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -105,11 +125,28 @@ struct pdfToImageView: View {
         if let pdfDocument = PDFDocument(url: pdfPath), let page = pdfDocument.page(at: 0) {
             let pdfImage = page.thumbnail(of: CGSize(width: page.bounds(for: .mediaBox).size.width, height: page.bounds(for: .mediaBox).size.height), for: .mediaBox)
 
-            if let webpData = webpData(from: pdfImage) {
+            let finalImage = includeMargins ? pdfImage : cropToContent(pdfImage)
+
+            if let webpData = webpData(from: finalImage) {
                 fileToExport = ImageFile(imageData: webpData)
                 showSavePanel = true
             }
         }
+    }
+
+    func generatePreview() {
+        guard let pdfPath = pdfFilePath, pdfPath.pathExtension == "pdf" else { return }
+
+        if let pdfDocument = PDFDocument(url: pdfPath), let page = pdfDocument.page(at: 0) {
+            let pdfImage = page.thumbnail(of: CGSize(width: 300, height: 400), for: .mediaBox)
+            previewImage = includeMargins ? pdfImage : cropToContent(pdfImage)
+        }
+    }
+
+    func cropToContent(_ image: NSImage) -> NSImage {
+        // Placeholder for a cropping logic similar to Python's `crop_to_content` function
+        // In Swift, you would need to create logic to analyze and crop the image
+        return image  // Return the cropped image here after processing
     }
 
     func webpData(from image: NSImage) -> Data? {
