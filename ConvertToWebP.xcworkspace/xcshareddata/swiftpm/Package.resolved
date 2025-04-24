@@ -1,4 +1,5 @@
 {
+  "originHash" : "5e586872eba9e1fcc542382e9ad0c090e1537faa7fcf80c6ff310656e886e58b",
   "pins" : [
     {
       "identity" : "libwebp-xcode",
@@ -14,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SDWebImage/SDWebImage",
       "state" : {
-        "revision" : "be0bcd7823ce56629948491f2eaeaa19979514f7",
-        "version" : "5.19.4"
+        "revision" : "cac9a55a3ae92478a2c95042dcc8d9695d2129ca",
+        "version" : "5.21.0"
       }
     },
     {
@@ -28,5 +29,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
