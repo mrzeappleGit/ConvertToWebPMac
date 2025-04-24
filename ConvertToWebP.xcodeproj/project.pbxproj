@@ -11,6 +11,8 @@
 		C91FCEA12AD8CCC300464439 /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = C91FCEA02AD8CCC300464439 /* ffmpeg */; };
 		C91FCEA32AD8D3D500464439 /* ffprobe in Resources */ = {isa = PBXBuildFile; fileRef = C91FCEA22AD8D3D500464439 /* ffprobe */; };
 		C9295E4D2AD8C3D4004A2413 /* videoConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9295E4C2AD8C3D4004A2413 /* videoConverter.swift */; };
+		C95EFEBF2DB9B207002746E6 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = C95EFEBE2DB9B207002746E6 /* SDWebImage */; };
+		C95EFEC12DB9B207002746E6 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C95EFEC02DB9B207002746E6 /* SDWebImageMapKit */; };
 		C9ADB70D2A8C0B7B0080F0ED /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9ADB7092A8C0B7B0080F0ED /* Info.plist */; };
 		C9ADB70E2A8C0B7B0080F0ED /* ImageConverterGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ADB70A2A8C0B7B0080F0ED /* ImageConverterGUI.swift */; };
 		C9ADB70F2A8C0B7B0080F0ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ADB70B2A8C0B7B0080F0ED /* ContentView.swift */; };
@@ -19,12 +21,10 @@
 		C9ADB7152A8E921F0080F0ED /* UpdateWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ADB7132A8E921F0080F0ED /* UpdateWindowController.swift */; };
 		C9ADB7162A8E921F0080F0ED /* UpdateWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9ADB7142A8E921F0080F0ED /* UpdateWindowController.xib */; };
 		C9ADB71A2A940F780080F0ED /* pdfToImageGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ADB7192A940F780080F0ED /* pdfToImageGUI.swift */; };
+		C9BA2C382DB9B3CF005CE932 /* SDWebImageWebPCoder in Frameworks */ = {isa = PBXBuildFile; productRef = C9BA2C372DB9B3CF005CE932 /* SDWebImageWebPCoder */; };
 		C9C936BC2C4302D4005813DA /* textFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C936BB2C4302D4005813DA /* textFormatter.swift */; };
-		C9C936D42C430CBF005813DA /* SDWebImageWebPCoder in Frameworks */ = {isa = PBXBuildFile; productRef = C9C936D32C430CBF005813DA /* SDWebImageWebPCoder */; };
-		C9C936D62C430CC2005813DA /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = C9C936D52C430CC2005813DA /* SDWebImage */; };
-		C9C936D82C430CC5005813DA /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C9C936D72C430CC5005813DA /* SDWebImageMapKit */; };
-		C9C936D92C430E65005813DA /* libwebp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F932F32A8B6D41004550D8 /* libwebp.framework */; };
 		C9C936DC2C430E66005813DA /* Pods_ConvertToWebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A02C750CB32C5CF5F7BC20 /* Pods_ConvertToWebP.framework */; };
+		C9CBE6FA2DB9B839009555C9 /* SVGCircleGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95EFEBB2DB9AFAA002746E6 /* SVGCircleGeneratorView.swift */; };
 		C9F932B62A8B40EA004550D8 /* ConvertToWebPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F932B52A8B40EA004550D8 /* ConvertToWebPApp.swift */; };
 		C9F932B82A8B40EA004550D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F932B72A8B40EA004550D8 /* ContentView.swift */; };
 		C9F932BA2A8B40EB004550D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9F932B92A8B40EB004550D8 /* Assets.xcassets */; };
@@ -68,6 +68,7 @@
 		C91FCEA02AD8CCC300464439 /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
 		C91FCEA22AD8D3D500464439 /* ffprobe */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffprobe; sourceTree = "<group>"; };
 		C9295E4C2AD8C3D4004A2413 /* videoConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoConverter.swift; sourceTree = "<group>"; };
+		C95EFEBB2DB9AFAA002746E6 /* SVGCircleGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGCircleGeneratorView.swift; sourceTree = "<group>"; };
 		C9ADB7092A8C0B7B0080F0ED /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9ADB70A2A8C0B7B0080F0ED /* ImageConverterGUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageConverterGUI.swift; sourceTree = "<group>"; };
 		C9ADB70B2A8C0B7B0080F0ED /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,11 +102,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9C936D92C430E65005813DA /* libwebp.framework in Frameworks */,
-				C9C936D82C430CC5005813DA /* SDWebImageMapKit in Frameworks */,
+				C95EFEBF2DB9B207002746E6 /* SDWebImage in Frameworks */,
+				C95EFEC12DB9B207002746E6 /* SDWebImageMapKit in Frameworks */,
+				C9BA2C382DB9B3CF005CE932 /* SDWebImageWebPCoder in Frameworks */,
 				C9C936DC2C430E66005813DA /* Pods_ConvertToWebP.framework in Frameworks */,
-				C9C936D62C430CC2005813DA /* SDWebImage in Frameworks */,
-				C9C936D42C430CBF005813DA /* SDWebImageWebPCoder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +184,7 @@
 				C91FCEA02AD8CCC300464439 /* ffmpeg */,
 				C91163C92BCA7C4B0004401C /* Info.plist */,
 				C9F932B52A8B40EA004550D8 /* ConvertToWebPApp.swift */,
+				C95EFEBB2DB9AFAA002746E6 /* SVGCircleGeneratorView.swift */,
 				C9F932B72A8B40EA004550D8 /* ContentView.swift */,
 				C9F932B92A8B40EB004550D8 /* Assets.xcassets */,
 				C9F932BE2A8B40EB004550D8 /* ConvertToWebP.entitlements */,
@@ -249,9 +250,9 @@
 			);
 			name = ConvertToWebP;
 			packageProductDependencies = (
-				C9C936D32C430CBF005813DA /* SDWebImageWebPCoder */,
-				C9C936D52C430CC2005813DA /* SDWebImage */,
-				C9C936D72C430CC5005813DA /* SDWebImageMapKit */,
+				C95EFEBE2DB9B207002746E6 /* SDWebImage */,
+				C95EFEC02DB9B207002746E6 /* SDWebImageMapKit */,
+				C9BA2C372DB9B3CF005CE932 /* SDWebImageWebPCoder */,
 			);
 			productName = ConvertToWebP;
 			productReference = C9F932B22A8B40EA004550D8 /* ConvertToWebP.app */;
@@ -330,8 +331,8 @@
 			);
 			mainGroup = C9F932A92A8B40EA004550D8;
 			packageReferences = (
-				C9C936C62C430535005813DA /* XCRemoteSwiftPackageReference "SDWebImageWebPCoder" */,
-				C9C936CA2C430655005813DA /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				C95EFEBD2DB9B207002746E6 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				C9BA2C362DB9B3CF005CE932 /* XCRemoteSwiftPackageReference "SDWebImageWebPCoder" */,
 			);
 			productRefGroup = C9F932B32A8B40EA004550D8 /* Products */;
 			projectDirPath = "";
@@ -449,9 +450,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ConvertToWebP-ConvertToWebPUITests/Pods-ConvertToWebP-ConvertToWebPUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ConvertToWebP-ConvertToWebPUITests/Pods-ConvertToWebP-ConvertToWebPUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -466,9 +471,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ConvertToWebPTests/Pods-ConvertToWebPTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ConvertToWebPTests/Pods-ConvertToWebPTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -500,9 +509,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ConvertToWebP/Pods-ConvertToWebP-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ConvertToWebP/Pods-ConvertToWebP-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -516,6 +529,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9CBE6FA2DB9B839009555C9 /* SVGCircleGeneratorView.swift in Sources */,
 				C9ADB71A2A940F780080F0ED /* pdfToImageGUI.swift in Sources */,
 				C9F932E72A8B4DA6004550D8 /* AppDelegate.swift in Sources */,
 				C9F932B82A8B40EA004550D8 /* ContentView.swift in Sources */,
@@ -724,7 +738,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.4.1;
+				MARKETING_VERSION = 1.5.0;
 				MERGED_BINARY_TYPE = automatic;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mts-studios.ConvertToWebP";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -764,7 +778,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.4.1;
+				MARKETING_VERSION = 1.5.0;
 				MERGED_BINARY_TYPE = automatic;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mts-studios.ConvertToWebP";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -892,7 +906,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C9C936C62C430535005813DA /* XCRemoteSwiftPackageReference "SDWebImageWebPCoder" */ = {
+		C95EFEBD2DB9B207002746E6 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.21.0;
+			};
+		};
+		C9BA2C362DB9B3CF005CE932 /* XCRemoteSwiftPackageReference "SDWebImageWebPCoder" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageWebPCoder";
 			requirement = {
@@ -900,31 +922,23 @@
 				minimumVersion = 0.14.6;
 			};
 		};
-		C9C936CA2C430655005813DA /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.19.4;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C9C936D32C430CBF005813DA /* SDWebImageWebPCoder */ = {
+		C95EFEBE2DB9B207002746E6 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C9C936C62C430535005813DA /* XCRemoteSwiftPackageReference "SDWebImageWebPCoder" */;
-			productName = SDWebImageWebPCoder;
-		};
-		C9C936D52C430CC2005813DA /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9C936CA2C430655005813DA /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			package = C95EFEBD2DB9B207002746E6 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
 		};
-		C9C936D72C430CC5005813DA /* SDWebImageMapKit */ = {
+		C95EFEC02DB9B207002746E6 /* SDWebImageMapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C9C936CA2C430655005813DA /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			package = C95EFEBD2DB9B207002746E6 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImageMapKit;
+		};
+		C9BA2C372DB9B3CF005CE932 /* SDWebImageWebPCoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9BA2C362DB9B3CF005CE932 /* XCRemoteSwiftPackageReference "SDWebImageWebPCoder" */;
+			productName = SDWebImageWebPCoder;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
