@@ -22,8 +22,7 @@ struct ContentView: View {
                 AppButton(title: "PDF to Image", currentView: $activeView, targetView: .pdfToImage)
                 AppButton(title: "Video Converter", currentView: $activeView, targetView: .videoConverter)
                 AppButton(title: "Text Formatter", currentView: $activeView, targetView: .textFormatter)
-                // Add the button for the new view
-                AppButton(title: "SVG Circle Gen", currentView: $activeView, targetView: .svgCircleGenerator)
+                AppButton(title: "SVG Overlay Gen", currentView: $activeView, targetView: .svgCircleGenerator)
 
                 Spacer() // Pushes buttons to the left
             }
