@@ -8,10 +8,10 @@
   ⚠️ The Windows version is located <a href="https://github.com/mrzeappleGit/convertToWebP" target="_blank">here</a>.
 </div>
 
-# Universal File & WebP Tool Set
+# Web Weaver Kit
 Empowering your files transformation needs in one comprehensive toolkit!
 ## Overview
-The **Universal File & WebP Toolset** is a robust multi-purpose tool designed to streamline and enhance your digital file management tasks. Whether you need to convert images to the efficient WebP format, rename batches of files with ease, or extract the first page of a PDF as a WebP image, this toolset has got you covered.
+The **Web Weaver Kit** is a robust multi-purpose tool designed to streamline and enhance your digital file management tasks. Whether you need to convert images to the efficient WebP format, rename batches of files with ease, or extract the first page of a PDF as a WebP image, this toolset has got you covered.
 
 ## Features
 
