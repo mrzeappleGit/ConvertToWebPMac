@@ -44,17 +44,16 @@ struct ContentView: View {
                         .transition(.opacity)
                 case .pdfToImage:
                      // Replace with your actual PDF view if different
-                    Text("PDF to Image View Placeholder")
-                        .transition(.opacity)
+                        pdfToImageView().transition(.opacity)
 //                  pdfToImageView()
                 case .videoConverter:
                      // Replace with your actual Video view if different
-                    Text("Video Converter View Placeholder")
+                    VideoConverterView()
                         .transition(.opacity)
 //                  VideoConverterView()
                 case .textFormatter:
                      // Replace with your actual Text view if different
-                    Text("Text Formatter View Placeholder")
+                    TextFormatterView()
                         .transition(.opacity)
 //                  TextFormatterView()
 
